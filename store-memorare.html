@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Loading Image-Data Color-Set & Positional</title>
+  </head>
+
+  <body>
+	<canvas name="test"></canvas>
+	
+    <script>
+		var tag = "canvas";
+		var name = "test";
+		
+		var test = document.getElementsByTagName(tag).namedItem(name);
+		
+		//test.width = 4;
+		//test.height = 4;
+		let data = [
+			[
+				[0,0,0,1],
+				[255,255,255,1]
+			],
+			[
+				[0,1,0,1],
+				[1,0,1,0],
+				[0,1,0,1],
+				[1,0,1,0]
+			]
+		];
+		let colors = data[0];
+		let posits = data[1];
+		let width = posits.length;
+		let height = Math.max(...posits.map(sub => sub.length));
+		console.log(width);
+		console.log(height);
+		let context = test.getContext('2d');
+		context.clearRect(0, 0, (test.width = width), (test.height = height));
+		for(let width = posits.length, index = 0; index < width; index++)
+		{
+			for(let height = posits[index].length, position = 0; position < height; position++)
+			{
+				let color = colors[posits[index][position]];
+				let rgbaSignature = "rgba(" + color[0] + "," + color[1] + "," + color[2] + "," + (color[3] * 255) + ")";
+				context.fillStyle = rgbaSignature;
+				context.fillRect(index, position, 1, 1);
+			}
+		}
+    </script>
+  </body>
+
+</html>

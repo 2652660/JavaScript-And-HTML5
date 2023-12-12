@@ -44,3 +44,7 @@ As a Width and Height determination procedure, and then looping positional refer
 Considering that JPEG, PNG, etc... (I believe MicroSofts' original BMP formats - even had "padding" [Regarding; either functional or not, anything outside of Colors and Positions referencing Colors, as Padding.]) each have such data within them - and since that is all needed to render and paint in this form...it begs the question; "Why not change it?"
 
 No?
+
+My long-term view;
+a ranked per-site structure containing color data. (This could make Accessibility standards easier to obtain; as browsers could receive a unitary declaration of colors; and each Browser could handle shifts as needed and defined by user)
+& references; (cached ^)
